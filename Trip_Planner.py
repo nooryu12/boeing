@@ -1,3 +1,8 @@
+"""This is my first program I have coded using python.This program is basically 
+a trip planner for users where they can calculate their total fare including travel, stay or rental. 
+For now this planner works for certia cities and hotels mentioned
+I am hoping to learn more in order to create more complex programs."""
+
 def rental_cost(days):
     cost = days * 100
     if days >=7:
@@ -12,6 +17,7 @@ def single_armada_cost(nights,city):
     elif city == "DUBAI":
         total = 300 * nights
     return total
+
 def double_armada_cost(nights,city):
     if city == "SHARJAH":
         total = 500 * nights
@@ -26,6 +32,7 @@ def single_khor_cost(nights,city):
     elif city == "DUBAI":
         total = 350 * nights
     return total
+
 def double_khor_cost(nights,city):
     if city == "SHARJAH":
         total = 340 * nights
@@ -57,6 +64,7 @@ def plane_oneway_cost(city):
         return 900
     if city == "DUBAI":
         return 1100
+    
 def plane_return_cost(city):
     if city == "SHARJAH":
         return 2000
@@ -68,16 +76,13 @@ def bus_oneway_cost(city):
         return 222
     elif city == "DUBAI":
         return 475
+    
 def bus_return_cost(city):
     if city == "SHARJAH":
         return 400
     elif city == "DUBAI":
         return 800
         
-
-
-    
-
         
 def rental_room(room,rental):
     if hotel_rev == "ARMADA" and room == "SINGLE" and rental == "N":
@@ -109,8 +114,7 @@ def rental_room(room,rental):
         else:
             print " "
             print "DEAR %s, your total trip cost for %s %s rooms at %s HOTEL for %s days is: $" %(name ,room_num,room_type,hotel_rev,hotel_days) + str((int(room_num)*double_armada_cost(int(hotel_days),city)) + int(mod_check(mode,ticket)) + int(spending) + rental_cost(int(rental_days)))
-        
-        
+             
     elif hotel_rev == "KHOR" and  room == "SINGLE" and rental == "N":
         print "DEAR %s, your total trip cost for %s %s rooms at %s HOTEL for %s days is: $" %(name,room_num,room_type,hotel_rev,hotel_days) + str((int(room_num)*single_khor_cost(int(hotel_days),city)) + int(mod_check(mode,ticket)) + int(spending))
         
